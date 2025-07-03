@@ -1,31 +1,13 @@
-import { useState } from 'react';
-import { bricksfi_backend } from 'declarations/bricksfi_backend';
+import HeroMid from "../component/HeroMid";
+import HeroTop from "../component/HeroTop";
+import Navbar from "../component/Navbar";
 
-function App() {
-  const [greeting, setGreeting] = useState('');
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    bricksfi_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
-
-  return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
-  );
+export default function App(){
+  return(
+    <div>
+    <Navbar/>
+    <HeroTop/>
+    <HeroMid/>
+    </div>
+  )
 }
-
-export default App;
