@@ -7,7 +7,7 @@
     "setup": "npm i && dfx canister create bricksfi_backend && dfx generate bricksfi_backend && dfx deploy",
     "start": "vite --port 3000",
     "dev": "npm run dev",
-    "prebuild": "dfx generate",
+    "prebuild": "if [ \"$VERCEL\" != \"1\" ]; then dfx generate; fi",
     "build": "tsc && vite build",
     "format": "prettier --write \"src/**/*.{json,js,jsx,ts,tsx,css,scss}\""
   },
@@ -33,4 +33,3 @@
     "vite-plugin-environment": "^1.1.3"
   }
 }
-
