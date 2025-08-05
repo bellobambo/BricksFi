@@ -1,5 +1,4 @@
-import React from "react";
-
+import { AppleIcon} from 'lucide-react'
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white">
@@ -140,6 +139,8 @@ const Footer = () => {
                 <a href="#" className="block">
                   <div className="bg-black rounded-lg p-3 flex items-center space-x-3 hover:bg-gray-700 transition-colors">
                     <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+                    <AppleIcon className='bg-black'/>
+                  
                       <span className="text-black font-bold text-sm"></span>
                     </div>
                     <div>
