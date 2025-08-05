@@ -6,11 +6,10 @@ const WaitList = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Join the WaitList
+           Be the First to Experience the Future
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Be the first to know when BricksFi launches. Get early access to
-            revolutionary real estate investment opportunities.
+          <p className="text-md text-gray-600 max-w-2xl mx-auto">
+         discover the possibilites for home ownership and investment solutions through the tokenization of real estate assets to craft lasting legacies.By joining our waitlist, you will be informed about our new features , updates and speacial offers before anyone else
           </p>
         </div>
 
