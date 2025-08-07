@@ -1,0 +1,23 @@
+type Property = 
+ record {
+   bathrooms: nat;
+   bedrooms: nat;
+   creator: principal;
+   fundingPercent: float64;
+   icpToUsd: float64;
+   id: nat;
+   image: text;
+   investors: nat;
+   monthlyYield: nat;
+   name: text;
+   price: nat;
+   squarefoot: nat;
+ };
+type BricksFi = 
+ service {
+   createProperty: (name: text, price: nat, image: text, bedrooms: nat,
+    bathrooms: nat, squarefoot: nat, investors: nat, monthlyYield: nat,
+    icpToUsd: float64, fundingPercent: float64) -> (nat);
+   getAllProperties: () -> (vec Property) query;
+ };
+service : () -> BricksFi
