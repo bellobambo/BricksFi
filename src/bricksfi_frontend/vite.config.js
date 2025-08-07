@@ -1,14 +1,16 @@
-import { fileURLToPath, URL } from 'url';
-import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
-import environment from 'vite-plugin-environment';
-import dotenv from 'dotenv';
+import { fileURLToPath, URL } from "url";
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+import environment from "vite-plugin-environment";
+import dotenv from "dotenv";
 
-dotenv.config({ path: '../../.env' });
+dotenv.config({ path: "../../.env" });
 
 export default defineConfig({
-  build: {
-    emptyOutDir: true,
+  uild: {
+    rollupOptions: {
+      external: ["@dfinity/identity"],
+    },
   },
   optimizeDeps: {
     esbuildOptions: {
@@ -34,14 +36,12 @@ export default defineConfig({
     alias: [
       {
         find: "declarations",
-        replacement: fileURLToPath(
-          new URL("../declarations", import.meta.url)
-        ),
+        replacement: fileURLToPath(new URL("../declarations", import.meta.url)),
       },
     ],
-    dedupe: ['@dfinity/agent'],
+    dedupe: ["@dfinity/agent"],
   },
   css: {
-    postcss: './postcss.config.js',
+    postcss: "./postcss.config.js",
   },
 });
